@@ -8,7 +8,7 @@ import { useRef } from "react"
 import Image from "next/image"
 import { Modal, ModalBody, ModalContent, ModalTrigger } from "@/components/ui/animated-modal"
 import { ContactForm } from "@/components/contact-form"
-// import { HeaderSwirl } from "./header-swirl"
+import { HeaderSwirl } from "./header-swirl"
 
 export function Header() {
   const headerRef = useRef(null)
@@ -37,7 +37,7 @@ export function Header() {
       </TransitionLink>
       <div className="container mx-auto flex justify-center items-center relative h-full min-h-[80px]">
         <nav className="hidden md:flex items-center gap-6 text-white font-medium tracking-wide bg-black/20 backdrop-blur-sm px-8 py-3 rounded-full border border-white/5 relative overflow-hidden group">
-          {/* <HeaderSwirl /> */}
+          <HeaderSwirl />
           <div className="flex items-center gap-6">
             <TransitionLink href="/" className="hover:text-white transition-colors">
               Home
