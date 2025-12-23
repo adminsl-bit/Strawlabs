@@ -20,7 +20,7 @@ export function InsightsScene() {
     })
 
     return (
-        <Points ref={pointsRef} positions={particlePositions.array} stride={3}>
+        <Points ref={pointsRef} positions={particlePositions.array as Float32Array} stride={3}>
             <PointMaterial
                 transparent
                 color="#8b5cf6"
