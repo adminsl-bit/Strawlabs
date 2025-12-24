@@ -4,7 +4,7 @@ import { Shader, ChromaFlow, Swirl } from "shaders/react"
 
 export function HeaderSwirl() {
     return (
-        <div className="absolute inset-0 z-0 pointer-events-none opacity-40">
+        <div className="absolute inset-0 z-0 pointer-events-none opacity-20">
             <Shader className="w-full h-full">
                 <Swirl
                     colorA="#000000"

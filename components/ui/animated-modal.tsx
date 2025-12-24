@@ -60,6 +60,8 @@ export const ModalTrigger = ({
     );
 };
 
+import { createPortal } from "react-dom";
+
 export const ModalBody = ({
     children,
     className,
@@ -68,8 +70,10 @@ export const ModalBody = ({
     className?: string;
 }) => {
     const { open } = useModal();
+    const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
+        setMounted(true);
         if (open) {
             document.body.style.overflow = "hidden";
         } else {
@@ -81,7 +85,9 @@ export const ModalBody = ({
     const { setOpen } = useModal();
     useOutsideClick(modalRef, () => setOpen(false));
 
-    return (
+    if (!mounted) return null;
+
+    return createPortal(
         <AnimatePresence>
             {open && (
                 <motion.div
@@ -122,6 +128,7 @@ export const ModalBody = ({
                             opacity: 0,
                             scale: 0.8,
                             rotateX: 10,
+                            y: 0,
                         }}
                         transition={{
                             type: "spring",
@@ -134,7 +141,8 @@ export const ModalBody = ({
                     </motion.div>
                 </motion.div>
             )}
-        </AnimatePresence>
+        </AnimatePresence>,
+        document.body
     );
 };
 
