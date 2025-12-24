@@ -33,7 +33,7 @@ Phone: ${formData.phone}
 Subject: ${formData.subject}
 Message: ${formData.message}`
 
-        const whatsappNumber = "1234567890" // Replace with your actual WhatsApp number
+        const whatsappNumber = "919791743010" // Updated to user's number
         const encodedMessage = encodeURIComponent(whatsappMessage)
         const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`
 
