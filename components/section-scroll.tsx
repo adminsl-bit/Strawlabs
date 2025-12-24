@@ -56,37 +56,43 @@ export default function Section({
     // Custom Hero Implementation
     if (type === "hero") {
         return (
-            <section id={id} className="relative h-screen w-full snap-start flex items-center justify-center p-8 md:p-16 lg:p-24 overflow-hidden text-center">
-                {/* 3D Background */}
-                <div className="absolute inset-0 z-0 pointer-events-none opacity-60">
-                    <Canvas camera={{ position: [0, 0, 3.5], fov: 75 }} gl={{ antialias: false, alpha: true }}>
-                        <Scene />
-                    </Canvas>
-                </div>
-
-                {/* Content */}
-                <div className="relative z-10 max-w-5xl mx-auto flex flex-col items-center">
+            <section id={id} className="relative h-screen w-full snap-start flex items-center justify-center p-8 md:p-16 lg:p-24 overflow-hidden">
+                <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                     <motion.div
                         initial={{ opacity: 0, y: 50 }}
                         animate={isActive ? { opacity: 1, y: 0 } : {}}
                         transition={{ duration: 0.8, ease: "easeOut" }}
+                        className="z-10 relative order-2 md:order-1 text-left"
                     >
-                        <h1 className="text-6xl md:text-8xl lg:text-[10rem] font-bold leading-[0.9] tracking-tighter mb-8 text-white mix-blend-difference">{title}</h1>
-                        <p className="text-xl md:text-2xl lg:text-3xl text-neutral-300 mb-10 max-w-3xl font-light leading-relaxed mx-auto">{subtitle}</p>
+                        <h1 className="text-6xl md:text-8xl lg:text-[9rem] font-bold leading-[0.9] tracking-tighter mb-8 text-white mix-blend-difference">{title}</h1>
+                        <p className="text-xl md:text-2xl text-neutral-300 mb-10 max-w-xl font-light leading-relaxed">{subtitle}</p>
 
                         {showButton && (
                             <motion.div
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                animate={isActive ? { opacity: 1, scale: 1 } : {}}
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={isActive ? { opacity: 1, y: 0 } : {}}
                                 transition={{ duration: 0.5, delay: 0.4 }}
                             >
                                 <TransitionLink href="/#work">
-                                    <button className="bg-white text-black px-10 py-5 rounded-full font-bold text-lg hover:scale-105 transition-transform flex items-center gap-2 mx-auto">
+                                    <button className="bg-white text-black px-10 py-5 rounded-full font-bold text-lg hover:scale-105 transition-transform flex items-center gap-2">
                                         {buttonText} <ArrowRight className="w-6 h-6" />
                                     </button>
                                 </TransitionLink>
                             </motion.div>
                         )}
+                    </motion.div>
+
+                    <motion.div
+                        initial={{ opacity: 0, x: 50 }}
+                        animate={isActive ? { opacity: 1, x: 0 } : {}}
+                        transition={{ duration: 1, ease: "easeOut" }}
+                        className="relative z-0 flex justify-center items-center order-1 md:order-2 h-[400px] md:h-[600px] w-full"
+                    >
+                        <div className="relative w-full h-full opacity-80">
+                            <Canvas camera={{ position: [0, 0, 3.5], fov: 75 }} gl={{ antialias: false, alpha: true }}>
+                                <Scene />
+                            </Canvas>
+                        </div>
                     </motion.div>
                 </div>
             </section>
