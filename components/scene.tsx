@@ -85,6 +85,12 @@ export function Scene() {
     minFilter: THREE.NearestFilter,
     magFilter: THREE.NearestFilter,
   })
+
+  // Force transparent background
+  useMemo(() => {
+    gl.setClearColor(0, 0)
+  }, [gl])
+
   const fbo2 = useFBO(size, size, {
     type: THREE.FloatType,
     minFilter: THREE.NearestFilter,
