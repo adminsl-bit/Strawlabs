@@ -56,50 +56,9 @@ export default function Section({
     // Custom Hero Implementation
     if (type === "hero") {
         return (
-            <section id={id} className="relative h-screen w-full snap-start flex items-center justify-center p-8 md:p-16 lg:p-24 overflow-hidden">
-                <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                    <motion.div
-                        initial={{ opacity: 0, y: 50 }}
-                        animate={isActive ? { opacity: 1, y: 0 } : {}}
-                        transition={{ duration: 0.5 }}
-                        className="z-10 relative order-2 md:order-1"
-                    >
-                        <h1 className="text-5xl md:text-7xl lg:text-[7rem] font-bold leading-[1.1] tracking-tight mb-8 text-white mix-blend-difference">{title}</h1>
-                        <p className="text-lg md:text-xl lg:text-2xl text-neutral-400 mb-10 max-w-xl font-light leading-relaxed">{subtitle}</p>
-
-                        {showButton && (
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={isActive ? { opacity: 1, y: 0 } : {}}
-                                transition={{ duration: 0.5, delay: 0.3 }}
-                            >
-                                <TransitionLink href="/#work">
-                                    <button className="bg-white text-black px-8 py-4 rounded-full font-bold hover:scale-105 transition-transform flex items-center gap-2">
-                                        {buttonText} <ArrowRight className="w-5 h-5" />
-                                    </button>
-                                </TransitionLink>
-                            </motion.div>
-                        )}
-                    </motion.div>
-
-
-
-
-
-                    <motion.div
-                        initial={{ opacity: 0, x: 50 }}
-                        animate={isActive ? { opacity: 1, x: 0 } : {}}
-                        transition={{ duration: 1, ease: "easeOut" }}
-                        className="relative z-0 flex justify-center md:justify-end order-1 md:order-2 h-[400px] md:h-[600px] w-full"
-                    >
-                        <div className="relative w-full h-full">
-                            <Canvas camera={{ position: [0, 0, 3.5], fov: 75 }} gl={{ antialias: false, alpha: true }}>
-                                <Scene />
-                            </Canvas>
-                        </div>
-                    </motion.div>
-                </div>
-            </section>
+            <div className="w-full snap-start">
+                <Hero />
+            </div>
         )
     }
 
