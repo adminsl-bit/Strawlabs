@@ -89,6 +89,7 @@ export default function RootLayout({
             </filter>
           </svg>
         </div>
+        <div id="modal-root" className="relative z-[99999]" />
       </body>
     </html>
   )

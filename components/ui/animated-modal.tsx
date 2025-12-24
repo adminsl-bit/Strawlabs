@@ -87,6 +87,9 @@ export const ModalBody = ({
 
     if (!mounted) return null;
 
+    // Safety check for modal-root
+    const modalRoot = document.getElementById("modal-root") || document.body;
+
     return createPortal(
         <AnimatePresence>
             {open && (
@@ -142,7 +145,7 @@ export const ModalBody = ({
                 </motion.div>
             )}
         </AnimatePresence>,
-        document.body
+        modalRoot
     );
 };
 
