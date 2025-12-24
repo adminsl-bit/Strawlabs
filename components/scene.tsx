@@ -178,9 +178,6 @@ export function Scene() {
         </bufferGeometry>
         <primitive object={renderMaterial} attach="material" />
       </points>
-      <EffectComposer>
-        <Bloom intensity={0.6} luminanceThreshold={0.1} luminanceSmoothing={0.9} height={1024} />
-      </EffectComposer>
     </>
   )
 }
