@@ -56,9 +56,40 @@ export default function Section({
     // Custom Hero Implementation
     if (type === "hero") {
         return (
-            <div className="w-full snap-start">
-                <Hero />
-            </div>
+            <section id={id} className="relative h-screen w-full snap-start flex items-center justify-center p-8 md:p-16 lg:p-24 overflow-hidden text-center">
+                {/* 3D Background */}
+                <div className="absolute inset-0 z-0 pointer-events-none opacity-60">
+                    <Canvas camera={{ position: [0, 0, 3.5], fov: 75 }} gl={{ antialias: false, alpha: true }}>
+                        <Scene />
+                    </Canvas>
+                </div>
+
+                {/* Content */}
+                <div className="relative z-10 max-w-5xl mx-auto flex flex-col items-center">
+                    <motion.div
+                        initial={{ opacity: 0, y: 50 }}
+                        animate={isActive ? { opacity: 1, y: 0 } : {}}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                    >
+                        <h1 className="text-6xl md:text-8xl lg:text-[10rem] font-bold leading-[0.9] tracking-tighter mb-8 text-white mix-blend-difference">{title}</h1>
+                        <p className="text-xl md:text-2xl lg:text-3xl text-neutral-300 mb-10 max-w-3xl font-light leading-relaxed mx-auto">{subtitle}</p>
+
+                        {showButton && (
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                animate={isActive ? { opacity: 1, scale: 1 } : {}}
+                                transition={{ duration: 0.5, delay: 0.4 }}
+                            >
+                                <TransitionLink href="/#work">
+                                    <button className="bg-white text-black px-10 py-5 rounded-full font-bold text-lg hover:scale-105 transition-transform flex items-center gap-2 mx-auto">
+                                        {buttonText} <ArrowRight className="w-6 h-6" />
+                                    </button>
+                                </TransitionLink>
+                            </motion.div>
+                        )}
+                    </motion.div>
+                </div>
+            </section>
         )
     }
 
