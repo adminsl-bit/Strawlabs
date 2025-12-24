@@ -125,7 +125,7 @@ export default function Section({
                                         </button>
                                     </ModalTrigger>
                                     <ModalBody>
-                                        <ModalContent>
+                                        <ModalContent className="bg-[#0a0a0a] border-white/10">
                                             <ContactForm />
                                         </ModalContent>
                                     </ModalBody>
@@ -317,7 +317,7 @@ export default function Section({
                                                 </button>
                                             </ModalTrigger>
                                             <ModalBody>
-                                                <ModalContent>
+                                                <ModalContent className="bg-[#0a0a0a] border-white/10">
                                                     <ContactForm />
                                                 </ModalContent>
                                             </ModalBody>
