@@ -9,6 +9,7 @@ import React, {
     useRef,
     useState,
 } from "react";
+import { createPortal } from "react-dom";
 
 interface ModalContextType {
     open: boolean;
@@ -60,8 +61,6 @@ export const ModalTrigger = ({
     );
 };
 
-import { createPortal } from "react-dom";
-
 export const ModalBody = ({
     children,
     className,
@@ -87,7 +86,6 @@ export const ModalBody = ({
 
     if (!mounted) return null;
 
-    // Safety check for modal-root
     const modalRoot = document.getElementById("modal-root") || document.body;
 
     return createPortal(
@@ -105,14 +103,14 @@ export const ModalBody = ({
                         opacity: 0,
                         backdropFilter: "blur(0px)",
                     }}
-                    className="fixed inset-0 h-full w-full flex items-center justify-center z-[9999]"
+                    className="fixed [perspective:800px] [transform-style:preserve-3d] inset-0 h-full w-full  flex items-center justify-center z-[9999]"
                 >
                     <Overlay />
 
                     <motion.div
                         ref={modalRef}
                         className={cn(
-                            "min-h-[50%] max-h-[90%] md:max-w-[50%] w-full bg-[#0a0a0a] border border-white/10 md:rounded-2xl relative z-[10000] flex flex-col flex-1 overflow-hidden",
+                            "min-h-[50%] max-h-[90%] md:max-w-[40%] bg-white dark:bg-neutral-950 border border-transparent dark:border-neutral-800 md:rounded-2xl relative z-50 flex flex-col flex-1 overflow-hidden",
                             className
                         )}
                         initial={{
@@ -131,7 +129,6 @@ export const ModalBody = ({
                             opacity: 0,
                             scale: 0.8,
                             rotateX: 10,
-                            y: 0,
                         }}
                         transition={{
                             type: "spring",
@@ -157,7 +154,7 @@ export const ModalContent = ({
     className?: string;
 }) => {
     return (
-        <div className={cn("flex flex-col flex-1 p-8 md:p-10 overflow-y-auto", className)}>
+        <div className={cn("flex flex-col flex-1 p-8 md:p-10", className)}>
             {children}
         </div>
     );
@@ -196,7 +193,7 @@ const Overlay = ({ className }: { className?: string }) => {
                 opacity: 0,
                 backdropFilter: "blur(0px)",
             }}
-            className={`fixed inset-0 h-full w-full bg-black bg-opacity-50 z-[9999] ${className}`}
+            className={`fixed inset-0 h-full w-full bg-black bg-opacity-50 z-50 ${className}`}
         ></motion.div>
     );
 };
@@ -206,7 +203,7 @@ const CloseIcon = () => {
     return (
         <button
             onClick={() => setOpen(false)}
-            className="absolute top-4 right-4 group z-[10001]"
+            className="absolute top-4 right-4 group"
         >
             <svg
                 xmlns="http://www.w3.org/2000/svg"

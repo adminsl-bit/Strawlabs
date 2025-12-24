@@ -6,7 +6,7 @@ import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import { useRef } from "react"
 import Image from "next/image"
-import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/ui/dialog"
+import { Modal, ModalBody, ModalContent, ModalTrigger } from "@/components/ui/animated-modal"
 import { ContactForm } from "@/components/contact-form"
 import { HeaderSwirl } from "./header-swirl"
 
@@ -57,17 +57,18 @@ export function Header() {
             <TransitionLink href="/#about" className="hover:text-white transition-colors">
               Why Us
             </TransitionLink>
-            <Dialog>
-              <DialogTrigger asChild>
+            <Modal>
+              <ModalTrigger>
                 <button className="hover:text-white transition-colors">
                   Contact
                 </button>
-              </DialogTrigger>
-              <DialogContent className="sm:max-w-[600px] bg-[#0a0a0a] border-white/10 text-white">
-                <DialogTitle className="sr-only">Contact Form</DialogTitle>
-                <ContactForm />
-              </DialogContent>
-            </Dialog>
+              </ModalTrigger>
+              <ModalBody>
+                <ModalContent className="bg-[#0a0a0a] border-white/10">
+                  <ContactForm />
+                </ModalContent>
+              </ModalBody>
+            </Modal>
           </div>
         </nav>
       </div>
