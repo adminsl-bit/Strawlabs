@@ -7,7 +7,14 @@ export function Footer() {
     <footer className="relative text-white py-4 md:py-6 overflow-hidden">
       <div className="relative z-10 container mx-auto px-4 text-center">
         <div className="border-t border-white/10 flex flex-col md:flex-row justify-between items-center pt-4">
-          <p className="text-neutral-400">&copy; 2025 Straw Labs. Concept to Clarity.</p>
+          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
+            <p className="text-neutral-400">&copy; 2025 Straw Labs. Concept to Clarity.</p>
+            <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm text-neutral-500">
+              <span className="opacity-70">18, Arul Malar Convent Street, KK Nagar, Madurai-625020</span>
+              <a href="tel:+919791743010" className="hover:text-white transition-colors">+91 97917 43010</a>
+              <a href="mailto:hello@strawlabs.in" className="hover:text-white transition-colors">hello@strawlabs.in</a>
+            </div>
+          </div>
           <div className="flex gap-6 mt-4 md:mt-0">
             <TransitionLink href="https://www.linkedin.com/company/straw-labs" className="text-neutral-400 hover:text-white transition-colors">
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-label="LinkedIn">

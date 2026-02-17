@@ -63,7 +63,18 @@ Message: ${formData.message}`
           </TransitionLink>
         </div>
         <h1 className="text-5xl md:text-7xl font-bold mb-4">Contact Us</h1>
-        <p className="text-lg text-neutral-300 mb-12">We'd love to hear from you. Drop us a line below.</p>
+        <p className="text-lg text-neutral-300 mb-6">We'd love to hear from you. Drop us a line below.</p>
+        <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8 mb-12 text-neutral-400">
+          <div className="flex items-center gap-2">
+            <span className="text-sm font-medium tracking-wider uppercase opacity-50">Visit:</span> 18, Arul Malar Convent Street, KK Nagar, Madurai-625020
+          </div>
+          <a href="tel:+919791743010" className="hover:text-white transition-colors flex items-center gap-2">
+            <span className="text-sm font-medium tracking-wider uppercase opacity-50">Call:</span> +91 97917 43010
+          </a>
+          <a href="mailto:hello@strawlabs.in" className="hover:text-white transition-colors flex items-center gap-2">
+            <span className="text-sm font-medium tracking-wider uppercase opacity-50">Email:</span> hello@strawlabs.in
+          </a>
+        </div>
         <form onSubmit={handleSubmit} className="space-y-6 text-left">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <Input
