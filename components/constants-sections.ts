@@ -1,179 +1,201 @@
-
 export const SECTIONS = [
     {
         id: "hero",
         type: "hero",
-        title: "Concept. Clarity. Impact.",
-        subtitle: "We transform complex AI concepts into clear, actionable solutions for businesses worldwide.",
+        eyebrow: "AI-NATIVE ECOSYSTEM COMPANY",
+        title: "We build AI-first products, systems, and operating layers.",
+        subtitle: "Straw Labs turns AI ambition into real products, automated workflows, intelligent agents, and customer-facing AI experiences.",
         content: "",
         showButton: true,
-        buttonText: "See What We Do",
-        label: "Home"
+        buttonText: "Explore the Ecosystem",
+        secondaryButtonText: "Start the Conversation",
+        label: "Home",
+        chips: [],
     },
     {
-        id: "services",
-        type: "cards",
-        title: "Services",
-        subtitle: "End-to-end AI consulting, from strategy to execution.",
+        id: "ecosystem",
+        type: "ecosystem",
+        eyebrow: "",
+        title: "The Straw Labs Ecosystem",
+        subtitle: "A focused set of studios, systems, and intelligence layers designed to help businesses adopt AI, automate operations, and launch AI-native products.",
         content: "",
         showButton: false,
         buttonText: "",
-        label: "Services",
+        label: "Ecosystem",
         cards: [
             {
-                title: "AI Strategy & Roadmapping",
-                description: "Business-aligned AI adoption plans",
-                image: "/images/service-strategy.png"
+                title: "Forge",
+                label: "Product and venture studio",
+                description: "Builds AI-native products, MVPs, SaaS platforms, and internal tools from idea → execution → launch.",
             },
             {
-                title: "Intelligent Automation",
-                description: "Workflow, operations, and process automation",
-                image: "/images/service-automation.png"
+                title: "Catalyst",
+                label: "AI transformation operating system",
+                description: "Turns AI ideas into real operational systems through adoption workflows, roadmaps, and execution sprints.",
             },
             {
-                title: "Custom AI Solutions",
-                description: "NLP, computer vision, AI agents, internal tools",
-                image: "/images/service-custom.png"
+                title: "Nexus",
+                label: "Automation systems layer",
+                description: "Connects workflows, integrations, APIs, dashboards, and internal operations into AI-powered infrastructure.",
             },
             {
-                title: "Data & Predictive Intelligence",
-                description: "Forecasting, analytics, decision systems",
-                image: "/images/service-data.png"
+                title: "Sentinel",
+                label: "AI employees and agent layer",
+                description: "Deploys copilots, agents, and autonomous operational assistants for modern teams.",
             },
             {
-                title: "Conversational & Generative AI",
-                description: "Chatbots, copilots, internal AI assistants",
-                image: "/images/work-strategy.png"
+                title: "Echo",
+                label: "Conversational AI layer",
+                description: "Creates voice AI, assistants, WhatsApp flows, support bots, and intelligent customer interaction systems.",
             },
             {
-                title: "AI Advisory & Enablement",
-                description: "Architecture reviews, guidance, AI audits",
-                image: "/images/work-automation.png"
-            }
-        ]
+                title: "Atlas",
+                label: "AI enablement and partnerships",
+                description: "Helps organizations adopt AI through enablement systems, ecosystem partnerships, operational rollout, and access to modern AI technologies.",
+            },
+        ],
     },
     {
-        id: "how-we-work",
-        type: "process",
-        title: "How We Work",
-        subtitle: "Discover → Design → Build → Scale",
+        id: "seeenly",
+        type: "featured-product",
+        eyebrow: "BUILT BY FORGE",
+        title: "Seeenly",
+        subtitle: "AI visibility and discoverability platform.",
+        content: "Seeenly helps businesses become visible, understood, and recommended by AI systems as search and discovery shift from keywords to intelligence layers.",
+        showButton: true,
+        buttonText: "Explore Seeenly",
+        secondaryButtonText: "Start the Conversation",
+        label: "Seeenly",
+        chips: ["AI Visibility", "Brand Discoverability", "Built by Forge"],
+    },
+    {
+        id: "operating-layers",
+        type: "operating-layers",
+        eyebrow: "SYSTEMS, NOT SERVICES",
+        title: "Operating layers for AI-first businesses",
+        subtitle: "Each layer solves a specific adoption problem — from transformation strategy to automation, agents, and customer interactions.",
+        content: "",
+        showButton: true,
+        buttonText: "Start with One Workflow",
+        label: "Layers",
+        cards: [
+            {
+                title: "Catalyst",
+                label: "For AI transformation",
+                description: "Identify opportunities, design workflows, and convert AI ideas into operational systems.",
+            },
+            {
+                title: "Nexus",
+                label: "For automation infrastructure",
+                description: "Connect workflows, tools, data, APIs, and business operations into intelligent systems.",
+            },
+            {
+                title: "Sentinel",
+                label: "For AI employees",
+                description: "Build agents and copilots that support sales, support, operations, research, and internal teams.",
+            },
+            {
+                title: "Echo",
+                label: "For conversational experiences",
+                description: "Create voice AI, WhatsApp assistants, support bots, and customer-facing interaction systems.",
+            },
+            {
+                title: "Atlas",
+                label: "For AI enablement and partnerships",
+                description: "Support AI adoption with enablement pathways, partner-led access, implementation guidance, and practical rollout support.",
+            },
+        ],
+    },
+    {
+        id: "impact",
+        type: "impact",
+        eyebrow: "REAL WORK. REAL SYSTEMS.",
+        title: "Built for real-world execution.",
+        subtitle: "We focus on working systems, adoption, and outcomes — not AI theater.",
         content: "",
         showButton: false,
         buttonText: "",
-        label: "Process",
-        steps: [
-            {
-                title: "Discover",
-                description: "Understand business context and goals",
-                icon: "Search"
-            },
-            {
-                title: "Design",
-                description: "Architect the right AI solution",
-                icon: "PenTool"
-            },
-            {
-                title: "Build",
-                description: "Implement with speed and precision",
-                icon: "Hammer"
-            },
-            {
-                title: "Scale",
-                description: "Optimize, monitor, and evolve systems",
-                icon: "TrendingUp"
-            }
-        ]
-    },
-    {
-        id: "work",
-        type: "cards",
-        title: "Our Work",
-        subtitle: "Real-world AI solutions across industries",
-        content: "",
-        showButton: false,
-        buttonText: "View All",
-        label: "Work",
+        label: "Impact",
         cards: [
             {
-                title: "Retail Process Optimization & Sales Automation",
-                description: "Consulting · Automation · Retail Tech",
-                image: "/images/service-strategy.png"
+                title: "Vijaya Dhaya Realtors",
+                label: "AI-led workflow clarity",
+                description: "Business process re-engineering and AI adoption workflows for stronger operational visibility.",
             },
             {
-                title: "High-End Skill & Values Training Institute",
-                description: "Web Design · Brand Experience",
-                image: "/images/service-automation.png"
+                title: "Stutzee",
+                label: "Product direction",
+                description: "Product revamp across strategy, experience, and execution to improve user experience.",
             },
             {
-                title: "Young Indians Parliament (YIP)",
-                description: "Civic Tech · Event Systems",
-                image: "/images/service-custom.png"
+                title: "Young Indians Parliament",
+                label: "48-hour delivery",
+                description: "Live civic-tech platform for 500+ participants with real-time voting and dashboards.",
             },
-            {
-                title: "RageRadar",
-                description: "AI SaaS · Sentiment Intelligence",
-                image: "/images/service-data.png"
-            },
-            {
-                title: "Fitt Principle",
-                description: "Sports Science · Fitness Tech",
-                image: "/images/work-strategy.png"
-            },
-            {
-                title: "Websites & Digital Experiences",
-                description: "Web Design · Product Engineering",
-                image: "/images/work-automation.png"
-            }
-        ]
+
+        ],
     },
     {
         id: "insights",
         type: "standard",
+        eyebrow: "THOUGHT LEADERSHIP",
         title: "Insights",
-        subtitle: "Stay updated on practical perspectives on AI strategy, systems, and real-world adoption.",
-        content: "Stay updated with our latest research, whitepapers, and industry analysis. We explore the cutting edge of artificial intelligence.",
+        subtitle: "Practical perspectives on AI strategy, systems, product execution, and real-world adoption.",
+        content: "Ideas and operating notes from the edge of AI-native business building — focused on usefulness, leverage, and execution.",
         showButton: true,
-        buttonText: "Read Blog",
-        label: "Insights"
+        buttonText: "Read Insights",
+        label: "Insights",
     },
     {
-        id: "about",
-        type: "standard",
-        title: "Why Us",
-        subtitle: "We are a team of visionaries and engineers.",
-        content: "At Straw Labs, we believe in the power of clarity. Our mission is to demystify artificial intelligence and make it accessible to forward-thinking enterprises.",
+        id: "company",
+        type: "company",
+        eyebrow: "",
+        title: "Straw Labs exists to help businesses operate in an AI-first world.",
+        subtitle: "We combine product thinking, engineering execution, automation, and AI adoption into one focused ecosystem.",
+        content: "",
         showButton: true,
-        buttonText: "Get in Touch",
-        label: "Why Us",
-        testimonials: [
+        buttonText: "Start the Conversation",
+        label: "Company",
+        cards: [
             {
-                quote: "The attention to detail and innovative AI strategy have completely transformed our workflow. This is exactly what we've been looking for.",
-                name: "Sarah Chen",
-                designation: "Product Manager at TechFlow",
-                initials: "SC"
+                title: "Execution over theory",
+                description: "We focus on working systems, not strategy decks that never ship.",
             },
             {
-                quote: "Implementation was seamless and the results exceeded our expectations. The platform's flexibility is remarkable.",
-                name: "Michael Rodriguez",
-                designation: "CTO at InnovateSphere",
-                initials: "MR"
+                title: "AI over buzz",
+                description: "We use AI where it creates leverage, automation, and better decisions.",
             },
             {
-                quote: "This solution has significantly improved our team's productivity. The intuitive interface makes complex tasks simple.",
-                name: "Emily Watson",
-                designation: "Operations Director at CloudScale",
-                initials: "EW"
-            }
-        ]
+                title: "Outcomes over activity",
+                description: "Every system should move a workflow, product, or business result forward.",
+            },
+            {
+                title: "Systems over projects",
+                description: "We build reusable operating layers that can compound over time.",
+            },
+        ],
+    },
+    {
+        id: "cohort",
+        type: "cohort",
+        eyebrow: "BUILD WITH STRAW LABS",
+        title: "A 14-week cohort for students who want to learn by shipping.",
+        subtitle: "Hands-on exposure to AI products, automation systems, startup operations, client execution workflows, tech sales, and real-world problem solving across the Straw Labs ecosystem.",
+        content: "",
+        showButton: true,
+        buttonText: "Explore the Cohort",
+        secondaryButtonText: "Apply Now",
+        label: "Cohort",
     },
     {
         id: "contact",
         type: "cta",
-        title: "Ready to start your journey?",
-        subtitle: "",
+        eyebrow: "START WITH ONE HIGH-LEVERAGE MOVE",
+        title: "Your business deserves AI that works.",
+        subtitle: "Start with one workflow, one product, or one intelligent system. We’ll help identify the highest-leverage opportunity and move it toward execution.",
         content: "",
         showButton: true,
-        buttonText: "Get in Touch",
-        label: "Contact"
+        buttonText: "Start the Conversation",
+        label: "Contact",
     },
 ]

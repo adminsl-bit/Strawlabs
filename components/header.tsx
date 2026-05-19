@@ -4,14 +4,21 @@ import { TransitionLink } from "./transition-link"
 import { motion } from "framer-motion"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
-import { useRef } from "react"
+import { useEffect, useRef } from "react"
 import Image from "next/image"
+import Link from "next/link"
+import { useRouter } from "next/navigation"
 import { Modal, ModalBody, ModalContent, ModalTrigger } from "@/components/ui/animated-modal"
 import { ContactForm } from "@/components/contact-form"
 import { HeaderSwirl } from "./header-swirl"
 
 export function Header() {
   const headerRef = useRef(null)
+  const router = useRouter()
+
+  useEffect(() => {
+    router.prefetch("/build-with-strawlabs")
+  }, [router])
 
   useGSAP(() => {
     gsap.from(headerRef.current, {
@@ -19,7 +26,7 @@ export function Header() {
       opacity: 0,
       duration: 1,
       ease: "power3.out",
-      delay: 2,
+      delay: 0.4,
     })
   }, [])
 
@@ -31,35 +38,40 @@ export function Header() {
           alt="S.T.R.A.W. Labs Logo"
           width={150}
           height={100}
-          className="w-auto h-24 md:h-32 opacity-90 hover:opacity-100 transition-opacity mix-blend-difference relative z-50"
+          className="w-auto h-20 md:h-28 opacity-90 hover:opacity-100 transition-opacity mix-blend-difference relative z-50"
           priority
         />
       </TransitionLink>
-      <div className="container mx-auto flex justify-center items-center relative h-full min-h-[80px]">
-        <nav className="hidden md:flex items-center gap-6 text-white font-medium tracking-wide bg-black/20 backdrop-blur-sm px-8 py-3 rounded-full border border-white/5 relative overflow-hidden group">
-          <HeaderSwirl />
-          <div className="flex items-center gap-6">
-            <TransitionLink href="/" className="hover:text-white transition-colors">
+
+      <div className="container mx-auto flex justify-center items-center relative h-full min-h-[72px]">
+        <nav className="hidden md:flex items-center gap-6 text-white font-medium tracking-wide bg-black/30 backdrop-blur-md px-7 py-3 rounded-full border border-white/10 relative overflow-visible group/nav">
+          <div className="absolute inset-0 rounded-full overflow-hidden pointer-events-none">
+            <HeaderSwirl />
+          </div>
+          <div className="flex items-center gap-6 relative z-10">
+            <TransitionLink href="/#hero" className="text-sm hover:text-white/80 transition-colors">
               Home
             </TransitionLink>
-            <TransitionLink href="/#services" className="hover:text-white transition-colors">
-              Services
+
+            <TransitionLink href="/#ecosystem" className="text-sm hover:text-white/80 transition-colors">
+              Ecosystem
             </TransitionLink>
-            <TransitionLink href="/#how-we-work" className="hover:text-white transition-colors">
-              Process
+
+            <TransitionLink href="/#impact" className="text-sm hover:text-white/80 transition-colors">
+              Impact
             </TransitionLink>
-            <TransitionLink href="/#work" className="hover:text-white transition-colors">
-              Work
-            </TransitionLink>
-            <TransitionLink href="/#insights" className="hover:text-white transition-colors">
+            <TransitionLink href="/#insights" className="text-sm hover:text-white/80 transition-colors">
               Insights
             </TransitionLink>
-            <TransitionLink href="/#about" className="hover:text-white transition-colors">
-              Why Us
+            <TransitionLink href="/#company" className="text-sm hover:text-white/80 transition-colors">
+              Company
             </TransitionLink>
+            <Link href="/build-with-strawlabs" prefetch className="text-sm hover:text-white/80 transition-colors">
+              Cohort
+            </Link>
             <Modal>
               <ModalTrigger>
-                <button className="hover:text-white transition-colors">
+                <button className="text-sm hover:text-white/80 transition-colors">
                   Contact
                 </button>
               </ModalTrigger>

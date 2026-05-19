@@ -11,12 +11,13 @@ import { Footer } from "@/components/footer"
 import { TransitionProvider, PageTransitionWrapper } from "@/components/transition-provider"
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://strawlabs.in"),
   title: {
-    default: "S.T.R.A.W. Labs | From Concept to Clarity",
+    default: "S.T.R.A.W. Labs | AI-Native Ecosystem Company",
     template: "%s | S.T.R.A.W. Labs"
   },
-  description: "AI consulting and solutions - transforming complex AI concepts into clear, actionable business strategies. Specialists in AI Strategy, Intelligent Automation, and Custom AI Solutions.",
-  keywords: ["AI Consulting", "Artificial Intelligence", "AI Strategy", "Machine Learning", "Intelligent Automation", "Straw Labs", "S.T.R.A.W. Labs"],
+  description: "Straw Labs is an AI-native ecosystem company building products, operating layers, automation systems, AI employees, and conversational AI experiences for modern businesses.",
+  keywords: ["AI Ecosystem", "AI Products", "AI Transformation", "Automation Systems", "AI Employees", "Conversational AI", "Product Studio", "Straw Labs", "S.T.R.A.W. Labs"],
   authors: [{ name: "S.T.R.A.W. Labs" }],
   creator: "S.T.R.A.W. Labs",
   publisher: "S.T.R.A.W. Labs",
@@ -28,9 +29,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://strawlabs.com",
-    title: "S.T.R.A.W. Labs | From Concept to Clarity",
-    description: "AI consulting and solutions - transforming complex AI concepts into clear, actionable business strategies.",
+    url: "https://strawlabs.in",
+    title: "S.T.R.A.W. Labs | AI-Native Ecosystem Company",
+    description: "AI-native products, operating layers, automation systems, AI employees, and conversational AI experiences for modern businesses.",
     siteName: "S.T.R.A.W. Labs",
     images: [
       {
@@ -43,8 +44,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "S.T.R.A.W. Labs | From Concept to Clarity",
-    description: "AI consulting and solutions - transforming complex AI concepts into clear, actionable business strategies.",
+    title: "S.T.R.A.W. Labs | AI-Native Ecosystem Company",
+    description: "AI-native products, operating layers, automation systems, AI employees, and conversational AI experiences for modern businesses.",
     images: ["/images/og-image.png"],
     creator: "@strawlabs",
   },
@@ -61,6 +62,8 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
+      { url: "/favicon.ico", sizes: "32x32" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
       { url: "/icon.svg", type: "image/svg+xml" },
       { url: "/icon-dark-32x32.png", sizes: "32x32", type: "image/png", media: "(prefers-color-scheme: dark)" },
       { url: "/icon-light-32x32.png", sizes: "32x32", type: "image/png", media: "(prefers-color-scheme: light)" },
@@ -76,7 +79,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`dark ${GeistSans.variable} ${GeistMono.variable}`} suppressHydrationWarning>
       <body className="bg-black text-foreground antialiased selection:bg-primary selection:text-primary-foreground font-sans" suppressHydrationWarning>
         <CustomCursor />
         <GrainOverlay />
@@ -104,10 +107,10 @@ export default function RootLayout({
               "@type": "Organization",
               "name": "Straw Labs",
               "alternateName": "S.T.R.A.W. Labs",
-              "description": "Premium AI Consulting & Solutions agency specializing in AI Strategy, Intelligent Automation, and Custom AI Solutions.",
-              "url": "https://strawlabs.com",
-              "keywords": "AI Consulting, Intelligent Automation, Custom AI Solutions, AI Strategy",
-              "logo": "https://strawlabs.com/logo.png",
+              "description": "AI-native ecosystem company building products, operating layers, automation systems, AI employees, and conversational AI experiences for modern businesses.",
+              "url": "https://strawlabs.in",
+              "keywords": "AI Ecosystem, AI Products, AI Transformation, Automation Systems, AI Employees, Conversational AI, Product Studio",
+              "logo": "https://strawlabs.in/logo.png",
               "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "18, Arul Malar Convent Street, KK Nagar",
@@ -120,7 +123,7 @@ export default function RootLayout({
                 "@type": "ContactPoint",
                 "telephone": "+91-97917-43010",
                 "contactType": "customer service",
-                "email": "hello@strawlabs.in",
+                "email": "info@strawlabs.in",
                 "availableLanguage": ["en"]
               },
               "sameAs": [
