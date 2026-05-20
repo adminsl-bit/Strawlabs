@@ -1,4 +1,5 @@
 import type React from "react"
+import { Suspense } from "react"
 import type { Metadata } from "next"
 import { GeistSans } from "geist/font/sans"
 import { GeistMono } from "geist/font/mono"
@@ -9,6 +10,7 @@ import { GrainOverlay } from "@/components/grain-overlay"
 import { CustomCursor } from "@/components/custom-cursor"
 import { Footer } from "@/components/footer"
 import { TransitionProvider, PageTransitionWrapper } from "@/components/transition-provider"
+import { GoogleAnalytics } from "@/components/google-analytics"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://strawlabs.in"),
@@ -81,6 +83,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`dark ${GeistSans.variable} ${GeistMono.variable}`} suppressHydrationWarning>
       <body className="bg-black text-foreground antialiased selection:bg-primary selection:text-primary-foreground font-sans" suppressHydrationWarning>
+        <Suspense fallback={null}>
+          <GoogleAnalytics />
+        </Suspense>
         <CustomCursor />
         <GrainOverlay />
         <GsapProvider>
