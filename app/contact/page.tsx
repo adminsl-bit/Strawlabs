@@ -71,8 +71,8 @@ Message: ${formData.message}`
           <a href="tel:+919791743010" className="hover:text-white transition-colors flex items-center gap-2">
             <span className="text-sm font-medium tracking-wider uppercase opacity-50">Call:</span> +91 97917 43010
           </a>
-          <a href="mailto:hello@strawlabs.in" className="hover:text-white transition-colors flex items-center gap-2">
-            <span className="text-sm font-medium tracking-wider uppercase opacity-50">Email:</span> hello@strawlabs.in
+          <a href="mailto:info@strawlabs.in" className="hover:text-white transition-colors flex items-center gap-2">
+            <span className="text-sm font-medium tracking-wider uppercase opacity-50">Email:</span> info@strawlabs.in
           </a>
         </div>
         <form onSubmit={handleSubmit} className="space-y-6 text-left">

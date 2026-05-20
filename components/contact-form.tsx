@@ -25,13 +25,13 @@ export function ContactForm() {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
 
-        const whatsappMessage = `New Contact Form Submission:
+        const whatsappMessage = `New AI Execution Call Request:
     
 Name: ${formData.name}
 Email: ${formData.email}
 Phone: ${formData.phone}
-Subject: ${formData.subject}
-Message: ${formData.message}`
+Focus Area: ${formData.subject}
+Build / Automate / Transform Goal: ${formData.message}`
 
         const whatsappNumber = "919791743010" // Updated to user's number
         const encodedMessage = encodeURIComponent(whatsappMessage)
@@ -52,9 +52,9 @@ Message: ${formData.message}`
 
     return (
         <div className="w-full h-full flex flex-col items-center justify-center p-4">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white">Contact Us</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white">Start the Conversation</h2>
             <p className="text-lg text-neutral-400 mb-8 text-center max-w-md font-light">
-                We'd love to hear from you. Drop us a line below.
+                Tell us what you want to build, automate, or transform. We’ll help identify the highest-leverage starting point.
             </p>
             <form onSubmit={handleSubmit} className="w-full space-y-4 text-left">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -89,7 +89,7 @@ Message: ${formData.message}`
                 <Input
                     type="text"
                     name="subject"
-                    placeholder="Subject"
+                    placeholder="What do you want to build or automate?"
                     value={formData.subject}
                     onChange={handleInputChange}
                     required
@@ -97,7 +97,7 @@ Message: ${formData.message}`
                 />
                 <Textarea
                     name="message"
-                    placeholder="Your Message"
+                    placeholder="Share the workflow, product, agent, or customer experience you want to move toward execution."
                     rows={4}
                     value={formData.message}
                     onChange={handleInputChange}

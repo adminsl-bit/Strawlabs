@@ -15,26 +15,33 @@ export default function LandingPage() {
     const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 })
 
     useEffect(() => {
+        const getSectionTop = (targetId: string) => {
+            if (!containerRef.current) return 0
+            if (targetId === "hero" || targetId === "home") return 0
+            const targetElement = containerRef.current.querySelector<HTMLElement>(`#${targetId}`)
+            return targetElement?.offsetTop ?? 0
+        }
+
         const handleScroll = () => {
             if (containerRef.current) {
                 const scrollPosition = containerRef.current.scrollTop
-                const windowHeight = window.innerHeight
-                const newActiveSection = Math.floor((scrollPosition + (windowHeight / 2)) / windowHeight)
+                const sectionElements = Array.from(containerRef.current.querySelectorAll<HTMLElement>("section[id]"))
+                const newActiveSection = sectionElements.reduce((closestIndex, section, index) => {
+                    const currentDistance = Math.abs(section.offsetTop - scrollPosition)
+                    const closestDistance = Math.abs(sectionElements[closestIndex]?.offsetTop - scrollPosition)
+                    return currentDistance < closestDistance ? index : closestIndex
+                }, 0)
                 setActiveSection(newActiveSection)
             }
         }
 
         const handleScrollToSection = (e: CustomEvent) => {
             const targetId = e.detail.targetId;
-            const index = SECTIONS.findIndex(s => s.id === targetId);
-            if (index !== -1 && containerRef.current) {
+            if (containerRef.current) {
                 containerRef.current.scrollTo({
-                    top: index * window.innerHeight,
+                    top: getSectionTop(targetId),
                     behavior: 'smooth'
                 })
-            } else if (targetId === "hero" || targetId === "home") {
-                // Fallback for home/top
-                containerRef.current?.scrollTo({ top: 0, behavior: 'smooth' })
             }
         }
 
@@ -55,8 +62,9 @@ export default function LandingPage() {
 
     const handleNavClick = (index: number) => {
         if (containerRef.current) {
+            const targetSection = containerRef.current.querySelectorAll<HTMLElement>("section[id]")[index]
             containerRef.current.scrollTo({
-                top: index * window.innerHeight,
+                top: targetSection?.offsetTop ?? 0,
                 behavior: 'smooth'
             })
         }
@@ -68,7 +76,7 @@ export default function LandingPage() {
                 <HeroSwirl />
                 <div className="absolute inset-0 bg-black/20" />
             </div>
-            <nav className="fixed top-0 right-0 h-screen flex flex-col justify-center z-30 p-4 hidden md:flex">
+            <nav className="fixed top-0 right-4 h-screen flex flex-col justify-center z-30 p-4 hidden md:flex">
                 {SECTIONS.map((section, index) => (
                     <button
                         key={section.id}
@@ -85,7 +93,7 @@ export default function LandingPage() {
             />
             <div
                 ref={containerRef}
-                className="h-screen overflow-y-auto snap-y snap-mandatory scroll-smooth relative z-10"
+                className="h-screen overflow-y-auto snap-y snap-proximity md:snap-mandatory scroll-smooth relative z-10"
             >
                 {SECTIONS.map((section, index) => (
                     <Section

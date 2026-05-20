@@ -18,8 +18,7 @@ export function Footer() {
               >
                 18, Arul Malar Convent Street, KK Nagar, Madurai-625020
               </a>
-              <a href="tel:+919791743010" className="hover:text-white transition-colors">+91 97917 43010</a>
-              <a href="mailto:hello@strawlabs.in" className="hover:text-white transition-colors">hello@strawlabs.in</a>
+              <a href="mailto:info@strawlabs.in" className="hover:text-white transition-colors">info@strawlabs.in</a>
             </div>
           </div>
           <div className="flex gap-6 mt-4 md:mt-0">
