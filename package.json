@@ -6,7 +6,8 @@
     "build": "next build",
     "dev": "next dev",
     "lint": "next lint",
-    "start": "next start"
+    "start": "next start",
+    "test:mobile-menu": "node scripts/check-mobile-menu.mjs"
   },
   "overrides": {
     "three": "$three",

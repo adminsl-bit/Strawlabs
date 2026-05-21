@@ -12,11 +12,17 @@ type TransitionLinkProps = LinkProps &
     children: ReactNode
   }
 
-export default function TransitionLink({ href, children, ...props }: TransitionLinkProps) {
+export default function TransitionLink({ href, children, onClick, ...props }: TransitionLinkProps) {
   const { playTransition } = useTransitionContext()
   const pathname = usePathname()
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    onClick?.(e)
+
+    if (e.defaultPrevented) {
+      return
+    }
+
     const hrefStr = href.toString()
     const targetPath = hrefStr.split("#")[0]
     const targetHash = hrefStr.split("#")[1]
