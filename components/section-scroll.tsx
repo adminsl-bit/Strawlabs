@@ -284,24 +284,24 @@ export default function Section({
                                     <CtaArrow />
                                 </Link>
                                 {secondaryButtonText && (
-                                    <a href="https://tally.so/r/7RaYqa" target="_blank" rel="noopener noreferrer" className={secondaryCtaClass}>
+                                    <Link href="/build-with-strawlabs" prefetch className={secondaryCtaClass}>
                                         <span className="relative z-10">{secondaryButtonText}</span>
                                         <CtaArrow />
-                                    </a>
+                                    </Link>
                                 )}
                             </div>
                         )}
                     </div>
                     <div className="rounded-[2rem] border border-white/10 bg-neutral-950/60 p-5 md:p-6 backdrop-blur-md">
-                        <p className="text-primary font-mono text-xs uppercase tracking-[0.28em] mb-5">OPEN COHORT ROLES</p>
+                        <p className="text-primary font-mono text-xs uppercase tracking-[0.28em] mb-5">COHORT STATUS</p>
                         <div className="space-y-4">
                             <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
-                                <h3 className="text-xl md:text-2xl font-bold text-white mb-2">Forge Intern</h3>
-                                <p className="text-sm uppercase tracking-[0.18em] text-neutral-500">Product & App Development</p>
+                                <h3 className="text-xl md:text-2xl font-bold text-white mb-2">Applications Closed</h3>
+                                <p className="text-sm uppercase tracking-[0.18em] text-neutral-500">Selection cycle complete</p>
                             </div>
                             <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
-                                <h3 className="text-xl md:text-2xl font-bold text-white mb-2">Atlas Intern</h3>
-                                <p className="text-sm uppercase tracking-[0.18em] text-neutral-500">AI Enablement & Tech Sales</p>
+                                <h3 className="text-xl md:text-2xl font-bold text-white mb-2">Build Mode Active</h3>
+                                <p className="text-sm uppercase tracking-[0.18em] text-neutral-500">Selected cohort moving into execution</p>
                             </div>
                         </div>
                     </div>
